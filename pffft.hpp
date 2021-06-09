@@ -695,6 +695,7 @@ inline Fft<T>::Fft(int length, int stackThresholdLen)
   char static_assert_like[(sizeof(Complex) == 2 * sizeof(Scalar)) ? 1 : -1]; // pffft requires sizeof(std::complex<>) == 2 * sizeof(Scalar)
 #endif
   const bool isLengthSupported = prepareLength(length);
+  (void)isLengthSupported;
   assert(isLengthSupported);
 }
 
